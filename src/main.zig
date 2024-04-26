@@ -26,7 +26,7 @@ pub fn main() !void {
         raylib.ClearBackground(raylib.WHITE);
         raylib.BeginMode3D(camera);
         // draw a brown cylinder with a green cone on top
-        raylib.DrawCylinder(Vector3{ .x = 0.0, .y = 0.0, .z = 0.0 }, 1.0, 1.0, 2.0, 10, raylib.BROWN);
+        raylib.DrawCylinder(Vector3{ .x = 0.0, .y = 0.0, .z = 0.0 }, 0.5, 0.5, 2.0, 10, raylib.BROWN);
         raylib.DrawCylinder(Vector3{ .x = 0.0, .y = 2.0, .z = 0.0 }, 0.0, 2.0, 4.0, 10, raylib.GREEN);
         raylib.DrawGrid(10, 1.0);
         raylib.EndMode3D();
