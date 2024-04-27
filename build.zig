@@ -1,6 +1,5 @@
 const std = @import("std");
 const raySdk = @import("raylib");
-
 // Although this function looks imperative, note that its job is to
 // declaratively construct a build graph that will be executed by an external
 // runner.
@@ -33,7 +32,19 @@ pub fn build(b: *std.Build) !void {
     // and the corresponding source file.
     const entries = [_]Entry{
         .{ .name = "tree", .path = "src/tree.zig", .description = "Simple tree." },
+        .{ .name = "counter", .path = "src/counter.zig", .description = "Simple counter." },
     };
+
+    // create a raygui_impl.c library
+    // const raygui_impl = b.addStaticLibrary(.{
+    //     .name = "raygui_impl",
+    //     .root_source_file = b.path("src"),
+    //     .target = target,
+    //     .optimize = optimize,
+    // });
+    // raygui_impl.addIncludePath(.{ .path = "vendor/raylib/src" });
+    // raygui_impl.addIncludePath(.{ .path = "vendor/raygui/src" });
+    // b.installArtifact(raygui_impl);
 
     // iterate over the list of targets and build each one
     for (entries) |entry| {
@@ -43,11 +54,14 @@ pub fn build(b: *std.Build) !void {
             .target = target,
             .optimize = optimize,
         });
-        b.installArtifact(exe);
 
         // Add the raylib include path to the build
         exe.addIncludePath(.{ .path = "vendor/raylib/src" });
+        exe.addIncludePath(.{ .path = "vendor/raygui/src" });
         exe.linkLibrary(raylib);
+        exe.addCSourceFile(.{ .file = b.path("src/raygui_impl.c") });
+        // exe.linkLibrary(raygui_impl);
+        b.installArtifact(exe);
 
         // This *creates* a Run step in the build graph, to be executed when another
         // step is evaluated that depends on it. The next line below will establish

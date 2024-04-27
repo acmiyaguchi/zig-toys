@@ -6,3 +6,5 @@
 - https://github.com/raysan5/raylib/tree/master
 - https://github.com/raysan5/raylib/issues/3895
 - https://github.com/charles-l/zig-odin-raylib-template
+- https://ziggit.dev/t/using-raygui-with-raylib/3399/7
+- https://github.com/Durobot/raylib-zig-examples/tree/main/zig-raylib-43-shapes-draw-circle_sector
