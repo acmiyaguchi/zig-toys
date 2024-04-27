@@ -1,3 +1,5 @@
 # zig stuff
 zig-cache/
 zig-out/
+*.mov
+.DS_Store

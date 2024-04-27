@@ -2,6 +2,8 @@
 
 This is a playground for me to learn zig, which is appealing due to the self-contained nature of the compiler and a build-system that's not based on Makefiles and CC.
 
+![tree](./screenshots/2024-04-27-tree.gif)
+
 ## notes
 
 ### sources
