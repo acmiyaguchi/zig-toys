@@ -20,3 +20,6 @@ This is a playground for me to learn zig, which is appealing due to the self-con
   - A discussion on why there's so much struggle to get raygui to work, and a solution further down.
 - https://github.com/Durobot/raylib-zig-examples/tree/main/zig-raylib-43-shapes-draw-circle_sector
   - Source for `raygui_impl.c`
+- https://github.com/ziglang/zig/issues/10836
+  - Discussion on wasm/emscripten support in zig
+- https://www.reddit.com/r/Zig/comments/sdcafd/zig_emscripten/
